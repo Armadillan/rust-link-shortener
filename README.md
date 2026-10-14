@@ -5,7 +5,7 @@ Practice project.
 
 - Rust HTTP server
 - Three simple html pages
-  - / to add codes
+  - / html form to add codes
   - / with the newly created short url (code) for copying
   - /{code} renders 404 page when returning 404
 - Redirects GET /{code}
