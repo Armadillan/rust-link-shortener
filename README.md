@@ -19,6 +19,7 @@ Practice project.
   - returns 201 with new short URL in response
 - SQLite database
   - Set max size with LRU eviction (last access time)
+    - Minimum age since creation to evict
 - Tests throughout
   - Integration tests & unit tests
   - HTTP routes
@@ -27,6 +28,7 @@ Practice project.
   - code length
   - address and port to bind listener to
   - max db size
+  - min age to evict
   - db config
 - Handle errors! no/minimal `unwrap`
   - Crashing on for example failing to bind to port is ok, but not on for example a malformed request
