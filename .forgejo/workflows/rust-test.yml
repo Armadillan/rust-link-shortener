@@ -22,7 +22,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
-      - name: Install Rust (${{ matrix.toolchain }})
+      - name: Install Rust
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
             | sh -s -- -y --profile minimal \
@@ -58,6 +58,3 @@ jobs:
 
       - name: Run tests
         run: cargo test --workspace --all-features
-
-      - name: Run doc tests
-        run: cargo test --workspace --all-features --doc
