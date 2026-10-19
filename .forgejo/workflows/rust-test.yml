@@ -11,23 +11,24 @@ env:
 
 jobs:
   test:
-    runs-on: rust
+    runs-on: docker
     strategy:
       fail-fast: false
       matrix:
+        # Add more entries (e.g. beta, 1.75) to test against other toolchains.
         toolchain: [stable, beta]
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
 
-      #- name: Install Rust (${{ matrix.toolchain }})
-      #  run: |
-      #    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
-      #      | sh -s -- -y --profile minimal \
-      #          --default-toolchain "${{ matrix.toolchain }}" \
-      #          --component rustfmt,clippy
-      #    echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+      - name: Install Rust (${{ matrix.toolchain }})
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
+            | sh -s -- -y --profile minimal \
+                --default-toolchain "${{ matrix.toolchain }}" \
+                --component rustfmt,clippy
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
 
       - name: Show versions
         run: |
