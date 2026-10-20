@@ -9,6 +9,7 @@
 2. HTTP
 3. SQLite
 4. eviction
+5. Containerise (docker compose)
 
 ### DB structure
 Fields:
