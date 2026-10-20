@@ -37,6 +37,7 @@ Practice project.
 
 - Support redirecting all request types
 - Optional commandline config (overrides ENV)
+- Switch to MySQL from SQLite
 - Optimize db transactions
   - atomic
   - combined insertion and eviction
